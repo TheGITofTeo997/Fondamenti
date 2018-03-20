@@ -9,4 +9,7 @@ public class TamaStrings {
 	public static final String G_COOKIE = "Dai un Biscotto";
 	public static final String G_HUG = "Fai una coccola";
 	public static final String TAMA = "Tamagotchi";
+	public static final String HUNGER = "Sazietà:";
+	public static final String HAPPINESS = "Felicità:";
+	
 }

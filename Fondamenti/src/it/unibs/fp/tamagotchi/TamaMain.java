@@ -10,8 +10,8 @@ public class TamaMain {
 		Tamagotchi tama1 = buildTama();
 		String[] menu = new String[]{TamaStrings.G_COOKIE, TamaStrings.G_HUG};
 		MyMenu tamamenu = new MyMenu(TamaStrings.TAMA , menu);
-		int choice = tamamenu.scegli();
 		while(true) {
+			int choice = tamamenu.scegli();
 			switch(choice) {
 			case 0:
 				System.exit(0);		
