@@ -21,7 +21,7 @@ public class TamaMain {
 				System.out.println(TamaStrings.SEPARATOR);
 				tama1.getHappiness();
 				tama1.getHunger();
-				tamaStatus(tama1);
+				//STATUS
 				System.out.println(TamaStrings.SEPARATOR);
 				break;
 			case 2: 
@@ -30,21 +30,11 @@ public class TamaMain {
 				System.out.println(TamaStrings.SEPARATOR);
 				tama1.getHappiness();
 				tama1.getHunger();
-				tamaStatus(tama1);
+				//STATUS
 				System.out.println(TamaStrings.SEPARATOR);
 				System.out.println(TamaStrings.SEPARATOR);
 				break;
 			}
-		}
-	}
-
-	public static void tamaStatus(Tamagotchi tama) {
-		if(tama.checkStatus()==true) {
-			System.out.println(TamaStrings.HAPPY);
-		}
-		else
-		{
-			System.out.println(TamaStrings.SAD);
 		}
 	}
 	

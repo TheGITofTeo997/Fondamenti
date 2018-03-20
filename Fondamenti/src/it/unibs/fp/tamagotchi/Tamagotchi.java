@@ -8,7 +8,7 @@ public class Tamagotchi {
 	private final int FACTOR = 5;
 	private final int TRESHOLD_MIN = 30;
 	private final int TRESHOLD_MAX = 80;
-	private boolean status;
+	public boolean status;
 	
 	public Tamagotchi(double happiness, double hunger, String nick) {
 		this.happiness = happiness;
@@ -38,15 +38,22 @@ public class Tamagotchi {
 		this.hunger -= FACTOR;
 	}
 	
-	public boolean checkStatus() {
+	public void checkStatus() {
 		if(this.hunger < TRESHOLD_MIN || this.happiness < TRESHOLD_MIN) {
-			this.status = false;
+			setSad();
 		}
 		else if(this.hunger > TRESHOLD_MAX && this.happiness > TRESHOLD_MAX)
 		{
-			this.status = true;
+			setHappy();
 		}
-		return this.status;
+	}
+	
+	public void setSad() {
+		this.status = false;
+	}
+	
+	public void setHappy() {
+		this.status = true;	
 	}
 
 }
