@@ -11,5 +11,8 @@ public class TamaStrings {
 	public static final String TAMA = "Tamagotchi";
 	public static final String HUNGER = "Sazietà:";
 	public static final String HAPPINESS = "Felicità:";
-	
+	public static final String Q_COOKIE = "Quanti biscotti vuoi dare? (1-20)";
+	public static final String Q_HUG = "Quante coccole vuoi dare? (1-20)";
+	public static final String SAD = "Tamagotchi è triste! :C";
+	public static final String HAPPY = "Tamagotchi è felice ^.^";
 }

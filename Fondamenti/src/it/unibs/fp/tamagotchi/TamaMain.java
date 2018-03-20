@@ -15,9 +15,36 @@ public class TamaMain {
 			switch(choice) {
 			case 0:
 				System.exit(0);		
-			case 1: //COOKIE
-			case 2: //HUG
+			case 1: 
+				int nc = InputDati.leggiIntero(TamaStrings.Q_COOKIE);
+				tama1.setCookie(nc);
+				System.out.println(TamaStrings.SEPARATOR);
+				tama1.getHappiness();
+				tama1.getHunger();
+				tamaStatus(tama1);
+				System.out.println(TamaStrings.SEPARATOR);
+				break;
+			case 2: 
+				int nh = InputDati.leggiIntero(TamaStrings.Q_HUG);
+				tama1.setHug(nh);
+				System.out.println(TamaStrings.SEPARATOR);
+				tama1.getHappiness();
+				tama1.getHunger();
+				tamaStatus(tama1);
+				System.out.println(TamaStrings.SEPARATOR);
+				System.out.println(TamaStrings.SEPARATOR);
+				break;
 			}
+		}
+	}
+
+	public static void tamaStatus(Tamagotchi tama) {
+		if(tama.checkStatus()==true) {
+			System.out.println(TamaStrings.HAPPY);
+		}
+		else
+		{
+			System.out.println(TamaStrings.SAD);
 		}
 	}
 	
