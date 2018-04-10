@@ -8,7 +8,7 @@ public class Tamagotchi {
 	private final int FACTOR = 5;
 	private final int TRESHOLD_MIN = 30;
 	private final int TRESHOLD_MAX = 80;
-	public boolean status;
+	public static final int MAXINPUT = 20;
 	
 	public Tamagotchi(double happiness, double hunger, String nick) {
 		this.happiness = happiness;
@@ -31,29 +31,29 @@ public class Tamagotchi {
 	public void setCookie(int n) {
 		this.hunger += n;
 		this.happiness -= FACTOR; 
+		if(this.hunger>MAX)
+			this.hunger = MAX;
 	}
 	
 	public void setHug(int n) {
 		this.happiness += n;
 		this.hunger -= FACTOR;
+		if(this.happiness>MAX)
+			this.happiness = MAX;
 	}
 	
-	public void checkStatus() {
+	public boolean isSad() {
 		if(this.hunger < TRESHOLD_MIN || this.happiness < TRESHOLD_MIN) {
-			setSad();
+			return true;
 		}
-		else if(this.hunger > TRESHOLD_MAX && this.happiness > TRESHOLD_MAX)
+		return false;
+	}
+	public boolean isHappy() {
+		if(this.hunger > TRESHOLD_MAX && this.happiness > TRESHOLD_MAX)
 		{
-			setHappy();
+			return true;
 		}
-	}
-	
-	public void setSad() {
-		this.status = false;
-	}
-	
-	public void setHappy() {
-		this.status = true;	
+		return false;
 	}
 
 }
