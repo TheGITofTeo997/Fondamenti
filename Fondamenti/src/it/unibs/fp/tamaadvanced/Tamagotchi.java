@@ -1,19 +1,19 @@
 package it.unibs.fp.tamaadvanced;
 
-public class Tamagotchi {
+public class Tamagotchi{
 	/**Class which instances a Tamagotchi object
 	 * @author Matr715329 & Matr715805
 	 */
 	protected double happiness;
 	protected double hunger;
 	protected String nick;
-	private final double MAX = 100;
+	protected final double MAX = 100;
+	protected final double MIN = 0;
+	protected final int TRESHOLD_MIN = 30;
+	protected final int TRESHOLD_MAX = 80;
 	private final int DIV = 2;
 	private final int FACTOR = 4;
 	private final double CONST = 1.10;
-	private final int TRESHOLD_MIN = 30;
-	private final int TRESHOLD_MAX = 80;
-	private final double MIN = 0;
 	public static final int MAXINPUT = 20;
 	
 	/**
