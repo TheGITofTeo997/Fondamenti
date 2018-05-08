@@ -10,36 +10,23 @@ public class TamaTestMatricole
 	public void dieForZeroSatisfaction() throws Exception 
 	{
 		final Tamagotchi tama = new Tamagotchi(0, 50, "Kira");
-		//assertTrue(tama.sonoMorto());
+		assertFalse(tama.isAlive());
 	}
 	
 	@Test
 	public void dieForZeroHunger() throws Exception 
 	{
 		final Tamagotchi tama = new Tamagotchi(50, 0, "Kira");
-		//assertTrue(tama.sonoMorto());
+		assertFalse(tama.isAlive());
 	}
 	
 	@Test
 	public void aliveWhenSatisfactionAndHungerAreGood() throws Exception 
 	{
 		final Tamagotchi tama = new Tamagotchi(50, 50,"Kira");
-		//assertFalse(tama.sonoMorto());
+		assertTrue(tama.isAlive());
 	}
-/****	
-	@Test(expected=IllegalArgumentException.class)
-	public void cantInstantiatePetWithNegativeSatisfaction() throws Exception 
-	{
-		new Tamagotchi(-10, 50, "Kira");
-	}
-	
-	@Test(expected=IllegalArgumentException.class)
-	public void cantInstantiatePetWithNegativeHunger() throws Exception 
-	{
-		new Tamagotchi(50, -10, "Kira");
-	}
-	
-	*****/
+
 	@Test
 	public void petCanReceivePets() throws Exception 
 	{
@@ -63,12 +50,12 @@ public class TamaTestMatricole
 		assertTrue(tama.isSad());
 	}
 	
-	//@Test
-	/*public void petIsUnhappyDueToExtremeRepletion() throws Exception 
+	@Test
+	public void petIsUnhappyDueToExtremeRepletion() throws Exception 
 	{
 		final Tamagotchi tama = new Tamagotchi(50, 95,"Kira");
 		assertTrue(tama.isSad());
-	}*/
+	}
 	
 	@Test
 	public void petIsHappyInTheMidlleOfTheRange() throws Exception 
@@ -82,8 +69,8 @@ public class TamaTestMatricole
 	{
 		final Tamagotchi tama = new Tamagotchi(50, 99, "Kira");
 		tama.setCookie(10);
-		//boolean res=tama.sonoMorto();
-		//assertTrue(res);
+		boolean res=tama.isAlive();
+		assertFalse(res);
 	}
 	
 	@Test

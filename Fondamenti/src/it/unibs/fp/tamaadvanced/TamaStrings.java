@@ -1,6 +1,9 @@
 package it.unibs.fp.tamaadvanced;
 
 public class TamaStrings {
+	/** Class which contains all the strings
+	 * @author Matr715329 & Matr715805
+	 */
 	public static final String WELCOME = "Welcome to Tamagotchi!";
 	public static final String SEPARATOR = "==================================";
 	public static final String ASKNICK = "Inserisci un nome per il tuo Tamagotchi:";
@@ -15,4 +18,5 @@ public class TamaStrings {
 	public static final String Q_HUG = "Quante coccole vuoi dare? (1-20)";
 	public static final String SAD = "Tamagotchi è triste! :C";
 	public static final String HAPPY = "Tamagotchi è felice ^.^";
+	public static final String DEAD = "Tamagotchi è morto!";
 }

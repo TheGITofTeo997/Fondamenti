@@ -16,45 +16,52 @@ public class TamaMain {
 			case 0:
 				System.exit(0);		
 			case 1: 
-				int nc = InputDati.leggiIntero(TamaStrings.Q_COOKIE);
+				int nc = InputDati.leggiInteroNonNegativo(TamaStrings.Q_COOKIE);
 				if(nc>Tamagotchi.MAXINPUT)
 					nc = Tamagotchi.MAXINPUT;
 				tama1.setCookie(nc);
 				System.out.println(TamaStrings.SEPARATOR);
-				tama1.getHappiness();
-				tama1.getHunger();
-				if(tama1.isHappy()==true)
-				{
-					System.out.println(TamaStrings.HAPPY);
-				}
-				else if(tama1.isSad()==true)
+				System.out.printf(TamaStrings.HAPPINESS + "%.2f", tama1.getHappiness());
+				System.out.println("");
+				System.out.printf(TamaStrings.HUNGER + "%.2f",tama1.getHunger());
+				System.out.println("");
+				if(tama1.isSad()==true)
 				{
 					System.out.println(TamaStrings.SAD);
 				}
 				System.out.println(TamaStrings.SEPARATOR);
+				if(tama1.isAlive() == false) {
+					System.out.println(TamaStrings.DEAD);
+					System.exit(0);
+				}
 				break;
 			case 2: 
-				int nh = InputDati.leggiIntero(TamaStrings.Q_HUG);
+				int nh = InputDati.leggiInteroNonNegativo(TamaStrings.Q_HUG);
 				if(nh>Tamagotchi.MAXINPUT)
 					nh = Tamagotchi.MAXINPUT;
 				tama1.setHug(nh);
 				System.out.println(TamaStrings.SEPARATOR);
-				tama1.getHappiness();
-				tama1.getHunger();
-				if(tama1.isHappy()==true)
-				{
-					System.out.println(TamaStrings.HAPPY);
-				}
-				else if(tama1.isSad()==true)
+				System.out.printf(TamaStrings.HAPPINESS + "%.2f", tama1.getHappiness());
+				System.out.println("");
+				System.out.printf(TamaStrings.HUNGER + "%.2f",tama1.getHunger());
+				System.out.println("");
+				if(tama1.isSad()==true)
 				{
 					System.out.println(TamaStrings.SAD);
 				}
 				System.out.println(TamaStrings.SEPARATOR);
-				System.out.println(TamaStrings.SEPARATOR);
+				if(tama1.isAlive() == false) {
+					System.out.println(TamaStrings.DEAD);
+					System.exit(0);
+				}
 				break;
 			}
 		}
 	}
+	
+	/**
+	 * Method that welcomes you to Tama
+	 */
 	
 	public static void welcome() {
 		System.out.println(TamaStrings.SEPARATOR);
@@ -62,6 +69,11 @@ public class TamaMain {
 		System.out.println(TamaStrings.SEPARATOR);
 	}
 	
+	/**
+	 * Method that builds Tamagotchi based on user input
+	 * 
+	 * @return new Tamagotchi Object
+	 */
 	public static Tamagotchi buildTama() {
 		String nick = InputDati.leggiStringa(TamaStrings.ASKNICK);
 		double happiness = InputDati.leggiIntero(TamaStrings.ASKHAP);

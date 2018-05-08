@@ -1,60 +1,101 @@
 package it.unibs.fp.tamaadvanced;
 
 public class Tamagotchi {
-	private double happiness;
-	private double hunger;
-	private String nick;
-	private final int MAX = 100;
+	/**Class which instances a Tamagotchi object
+	 * @author Matr715329 & Matr715805
+	 */
+	protected double happiness;
+	protected double hunger;
+	protected String nick;
+	private final double MAX = 100;
 	private final int DIV = 2;
-	private final int FACTOR = 5;
+	private final int FACTOR = 4;
+	private final double CONST = 1.10;
 	private final int TRESHOLD_MIN = 30;
 	private final int TRESHOLD_MAX = 80;
+	private final double MIN = 0;
 	public static final int MAXINPUT = 20;
 	
+	/**
+	 * Constructor method for Tamagotchi Object Class
+	 * 
+	 * @param happiness
+	 * @param hunger
+	 * @param nick
+	 */
 	public Tamagotchi(double happiness, double hunger, String nick) {
 		this.happiness = happiness;
 		this.hunger = hunger;
 		this.nick = nick;
 	}
 	
-	public void getHunger() {
-		System.out.print(TamaStrings.HUNGER);
-		System.out.print(this.hunger);
-		System.out.println("");
+	/**
+	 * Method which return hunger value
+	 * 
+	 * @return hunger value
+	 */
+	public double getHunger() {
+		return this.hunger;
+	}
+	/**
+	 * Method which return happiness value
+	 * 
+	 * @return happiness value
+	 */
+	
+	public double getHappiness() {
+		return this.happiness;
 	}
 	
-	public void getHappiness() {
-		System.out.print(TamaStrings.HAPPINESS);
-		System.out.print(this.happiness);
-		System.out.println("");
-	}
-	
+	/**
+	 * Method which set hunger and happiness value accordingly to the number of cookies
+	 * 
+	 * @param number of cookies
+	 */
 	public void setCookie(int n) {
-		this.hunger *= 1.10; //TO DO
-		this.happiness -= FACTOR; 
+		double nd = n;
+		this.hunger *= Math.pow(CONST, nd);
+		this.happiness -= nd/FACTOR;
 		if(this.hunger>MAX)
 			this.hunger = MAX;
 	}
 	
+	/**
+	 * Method which set hunger and happiness value accordingly to the number of hugs
+	 * 
+	 * @param number of hugs
+	 */
 	public void setHug(int n) {
-		this.happiness += n;
-		this.hunger -= n/DIV;
+		double nd = n;
+		this.happiness += nd;
+		this.hunger -= nd/DIV;
 		if(this.happiness>MAX)
 			this.happiness = MAX;
 	}
 	
+	/**
+	 * Method that returns sad value
+	 * 
+	 * @return if Tama is sad or not
+	 */
 	public boolean isSad() {
-		if(this.hunger < TRESHOLD_MIN || this.happiness < TRESHOLD_MIN) {
+		if(this.hunger < TRESHOLD_MIN || this.happiness < TRESHOLD_MIN || this.hunger > TRESHOLD_MAX) {
 			return true;
 		}
 		return false;
 	}
-	public boolean isHappy() {
-		if(this.hunger > TRESHOLD_MAX && this.happiness > TRESHOLD_MAX)
-		{
-			return true;
-		}
-		return false;
+	
+	/**
+	 * Method that returns life status of Tama
+	 * 
+	 * @return if Tama is dead or not
+	 */
+	public boolean isAlive() {
+		if(this.hunger <= MIN || this.happiness <= MIN)
+			return false;
+		if(this.hunger == MAX)
+			return false;
+		return true;			
 	}
 
 }
