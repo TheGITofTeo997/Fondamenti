@@ -1,6 +1,8 @@
 package it.unibs.fp.tamazoo;
 
-public class TamaZoo {
-	
+import java.util.ArrayList;
+import it.unibs.fp.tamagotchi.*;
 
+public class TamaZoo {
+	ArrayList <Tamagotchi> tamaList = new ArrayList<>();
 }

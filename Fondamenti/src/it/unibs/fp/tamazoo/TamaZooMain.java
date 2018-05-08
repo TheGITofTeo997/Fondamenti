@@ -21,6 +21,16 @@ public class TamaZooMain {
 		String nick = InputDati.leggiStringa(TamaStrings.ASKNICK);
 		double happiness = NumeriCasuali.estraiDouble(0.0, 100.0);
 		double hunger = NumeriCasuali.estraiDouble(0.0, 100.0);
-		return new Tamagotchi(happiness, hunger, nick);
+		int choice;
+		choice = NumeriCasuali.estraiIntero(1, 2);
+		switch(choice)
+		{		
+		case 1:
+			return new TamaSad(happiness, hunger, nick);
+		case 2:
+			return new TamaHungry(happiness, hunger, nick);
+		}
+		return new Tamagotchi(happiness, hunger, nick);		
 	}
+	
 }
