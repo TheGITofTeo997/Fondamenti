@@ -57,7 +57,7 @@ public class TamaZooMain {
 		double happiness = NumeriCasuali.estraiDouble(0.0, 100.0);
 		double hunger = NumeriCasuali.estraiDouble(0.0, 100.0);
 		int choice;
-		choice = NumeriCasuali.estraiIntero(1, 2);
+		choice = NumeriCasuali.estraiIntero(1, 3);
 		switch(choice)
 		{		
 		case 1:
