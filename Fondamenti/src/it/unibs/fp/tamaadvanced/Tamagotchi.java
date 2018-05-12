@@ -110,6 +110,9 @@ public class Tamagotchi{
 		return true;			
 	}
 	
+	/**
+	 * This method will return the type of Tamagotchi in a String.
+	 */
 	public String getType() {
 		return this.type;
 	}

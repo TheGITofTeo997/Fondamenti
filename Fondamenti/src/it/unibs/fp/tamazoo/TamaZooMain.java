@@ -5,6 +5,9 @@ import it.unibs.fp.mylib.NumeriCasuali;
 import it.unibs.fp.tamaadvanced.*;
 
 public class TamaZooMain {
+	/**Class which instances a TamaSad object
+	 * @author Matr715329 & Matr715805
+	 */
 	private static int nTama;
 
 	public static void main(String[] args) {
@@ -46,9 +49,11 @@ public class TamaZooMain {
 		}	
 	}
 	
-	
-	
-	
+	/**
+	 * This method will build a random Tamagotchi type with random stats.
+	 * 
+	 * @return a type between 3 of Tamagotchi
+	 */
 	public static Tamagotchi buildRandomTama() {
 		String nick = InputDati.leggiStringa(TamaStrings.ASKNICK);
 		double happiness = NumeriCasuali.estraiDouble(0.0, 100.0);
@@ -68,6 +73,11 @@ public class TamaZooMain {
 		return new Tamagotchi(happiness, hunger, nick);		
 	}
 	
+	/*
+	 * This method will print the status of every Tamagotchi in a TamaZoo list.
+	 * 
+	 * @param a TamaZoo list
+	 */
 	public static void printStatus(TamaZoo zoo) {
 		for(int i=0; i<zoo.getSize();i++) {
 			System.out.println(TamaStrings.SEPARATOR);

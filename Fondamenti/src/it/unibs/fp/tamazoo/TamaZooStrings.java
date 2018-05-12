@@ -3,6 +3,9 @@ package it.unibs.fp.tamazoo;
 import it.unibs.fp.tamaadvanced.*;
 
 public class TamaZooStrings extends TamaStrings{
+	/** Class which contains additional strings for TamaZoo.
+	 * @author Matr715329 & Matr715805
+	 */
 	
 	public static final String HOWMANY= "Quanti Tamagotchi vuoi creare? ";
 	public static final String G_COOKIE_ALL = "Dai biscotti ai Tamagotchi";
