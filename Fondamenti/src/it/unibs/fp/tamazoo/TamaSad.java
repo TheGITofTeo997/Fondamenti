@@ -3,6 +3,7 @@ package it.unibs.fp.tamazoo;
 import it.unibs.fp.tamaadvanced.*;
 
 public class TamaSad extends Tamagotchi{
+	private String type = TamaZooStrings.TSAD;
 	
 	public TamaSad(double happiness, double hunger, String nick) 
 	{
@@ -11,12 +12,15 @@ public class TamaSad extends Tamagotchi{
 	}
 	
 	
-	public void setHug() {
-		
+	public void setHug(int n) {
+		this.happiness = MIN;
 	}
 	
-	public void setCookie() {
-		
+	public void setCookie(int n) {
+		double nd = n;
+		this.hunger *= Math.pow(CONST, nd);
+		if(this.hunger>MAX)
+			this.hunger = MAX;
 	}
 	
 	public boolean isSad() {
@@ -27,5 +31,9 @@ public class TamaSad extends Tamagotchi{
 		if(this.hunger <= MIN || this.hunger == MAX)
 			return false;
 		return true;			
+	}
+	
+	public String getType() {
+		return this.type;
 	}
 }

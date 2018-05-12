@@ -16,7 +16,7 @@ public class TamaZooMain {
 			zoo.addTo(buildRandomTama());
 		}
 		System.out.println(TamaStrings.SEPARATOR);
-		String[] menu = new String[]{TamaZooStrings.G_COOKIE_ALL, TamaZooStrings.G_HUG_ALL};
+		String[] menu = new String[]{TamaZooStrings.G_COOKIE_ALL, TamaZooStrings.G_HUG_ALL, TamaZooStrings.STATUS};
 		MyMenu tamamenu = new MyMenu(TamaStrings.TAMA , menu);
 		while(true) {
 			int choice = tamamenu.scegli();
@@ -28,25 +28,22 @@ public class TamaZooMain {
 				if(nc>Tamagotchi.MAXINPUT)
 					nc = Tamagotchi.MAXINPUT;
 				zoo.setAllCookies(nc);
-				System.out.println(TamaStrings.SEPARATOR);
-				/*System.out.printf(TamaStrings.HAPPINESS + "%.2f", tama1.getHappiness());
-				System.out.println("");
-				System.out.printf(TamaStrings.HUNGER + "%.2f",tama1.getHunger());
-				System.out.println("");
-				if(tama1.isSad()==true)
-				{
-					System.out.println(TamaStrings.SAD);
-				}
-				System.out.println(TamaStrings.SEPARATOR);
-				if(tama1.isAlive() == false) {
-					System.out.println(TamaStrings.DEAD);
-					System.exit(0);
-				}
-				break;*/
-				
+				printStatus(zoo);
+				zoo.checkForDead();
+				break;
+			case 2: 
+				int nh = InputDati.leggiInteroNonNegativo(TamaStrings.Q_HUG);
+				if(nh>Tamagotchi.MAXINPUT)
+					nh = Tamagotchi.MAXINPUT;
+				zoo.setAllHugs(nh);
+				printStatus(zoo);
+				zoo.checkForDead();
+				break;
+			case 3:
+				zoo.checkForDead();
+				printStatus(zoo);			
 			}
-		}
-			
+		}	
 	}
 	
 	
@@ -71,8 +68,26 @@ public class TamaZooMain {
 		return new Tamagotchi(happiness, hunger, nick);		
 	}
 	
-	public static void getStatus() {
-		
+	public static void printStatus(TamaZoo zoo) {
+		for(int i=0; i<zoo.getSize();i++) {
+			System.out.println(TamaStrings.SEPARATOR);
+			System.out.println(i+1 + "." + zoo.getAt(i).getName()+":"+"("+zoo.getAt(i).getType()+")");
+			System.out.println(TamaZooStrings.SOFTSEPARATOR);
+			System.out.print(TamaStrings.HAPPINESS);
+			System.out.printf("%.2f",zoo.getAt(i).getHappiness());
+			System.out.println("");
+			System.out.print(TamaStrings.HUNGER);
+			System.out.printf("%.2f",zoo.getAt(i).getHunger());
+			System.out.println("");
+			System.out.println(TamaZooStrings.SOFTSEPARATOR);
+			if(zoo.getAt(i).isSad()) {
+				System.out.println(TamaStrings.SAD);
+			}
+			if(!zoo.getAt(i).isAlive())
+			{
+				System.out.println(zoo.getAt(i).getName() + TamaZooStrings.DIED);
+			}	
+		}
 	}
 
 }

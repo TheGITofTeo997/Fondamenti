@@ -1,5 +1,7 @@
 package it.unibs.fp.tamaadvanced;
 
+import it.unibs.fp.tamazoo.TamaZooStrings;
+
 public class Tamagotchi{
 	/**Class which instances a Tamagotchi object
 	 * @author Matr715329 & Matr715805
@@ -11,9 +13,10 @@ public class Tamagotchi{
 	protected final double MIN = 0;
 	protected final int TRESHOLD_MIN = 30;
 	protected final int TRESHOLD_MAX = 80;
-	private final int DIV = 2;
-	private final int FACTOR = 4;
-	private final double CONST = 1.10;
+	protected final int DIV = 2;
+	protected final int FACTOR = 4;
+	protected final double CONST = 1.10;
+	private String type = TamaZooStrings.TBASE;
 	public static final int MAXINPUT = 20;
 	
 	/**
@@ -30,7 +33,7 @@ public class Tamagotchi{
 	}
 	
 	/**
-	 * Method which return hunger value
+	 * Method which returns hunger value
 	 * 
 	 * @return hunger value
 	 */
@@ -38,13 +41,22 @@ public class Tamagotchi{
 		return this.hunger;
 	}
 	/**
-	 * Method which return happiness value
+	 * Method which returns happiness value
 	 * 
 	 * @return happiness value
 	 */
 	
 	public double getHappiness() {
 		return this.happiness;
+	}
+	
+	/**
+	 * Method which returns Tamagotchi name
+	 * 
+	 * @return tamagotchi name
+	 */
+	public String getName() {
+		return this.nick;
 	}
 	
 	/**
@@ -97,5 +109,8 @@ public class Tamagotchi{
 			return false;
 		return true;			
 	}
-
+	
+	public String getType() {
+		return this.type;
+	}
 }

@@ -11,6 +11,13 @@ public class TamaZoo {
 		tamaList.add(tama);
 	}
 	
+	public Tamagotchi getAt(int i) {
+		return tamaList.get(i);
+	}
+	
+	public int getSize() {
+		return tamaList.size();
+	}
 	
 	public void setAllHugs(int n) {
 		for(int i=0; i<tamaList.size(); i++)
@@ -27,6 +34,12 @@ public class TamaZoo {
 	}
 	
 	public void checkForDead() {
-		
+		if(tamaList.size() == 0)
+			System.exit(0);
+		for(int i=0; i<tamaList.size(); i++)
+		{
+			if(!tamaList.get(i).isAlive())
+				tamaList.remove(i);
+		}
 	}
 }
