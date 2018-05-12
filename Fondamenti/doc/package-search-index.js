@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"it.unibs.fp.tamaadvanced"}]
+packageSearchIndex = [{"l":"it.unibs.fp.tamazoo"}]
