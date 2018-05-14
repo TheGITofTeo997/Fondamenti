@@ -5,7 +5,7 @@ import it.unibs.fp.mylib.NumeriCasuali;
 import it.unibs.fp.tamaadvanced.*;
 
 public class TamaZooMain {
-	/**Class which instances a TamaSad object
+	/**Main class of TamaZoo
 	 * @author Matr715329 & Matr715805
 	 */
 	private static int nTama;
