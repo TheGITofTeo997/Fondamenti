@@ -1,9 +1,10 @@
 package it.unibs.fp.titoliazionari;
 
 import it.unibs.fp.mylib.MyMenu;
-
+/**Main Class of Title Project
+ * @author Matr715329 & Matr715805
+ */
 public class TitoloMain {
-
 	public static void main(String[] args) {
 		welcome();
 		ElencoTitoli titlesList = new ElencoTitoli();
@@ -64,7 +65,10 @@ public class TitoloMain {
 			}
 		}
 	}
-	
+	/**
+	 * Method which welcomes you to the program
+	 * 
+	 */
 	public static void welcome() {
 		System.out.println(TitoliString.SEPARATOR);
 		System.out.println(TitoliString.WELCOME);

@@ -1,5 +1,7 @@
 package it.unibs.fp.titoliazionari;
-
+/** Class which contains all the strings
+ * @author Matr715329 & Matr715805
+ */
 public class TitoliString {
 	public static final String WELCOME = "Gestione dei Titoli Azionari";
 	public static final String SEPARATOR = "=====================================";
