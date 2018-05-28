@@ -17,7 +17,7 @@ public class Titolo {
 		return this.value;
 	}
 	
-	public void setNewValue() {
-		
+	public void updateValue(double newCurrent) {
+		this.value = newCurrent;
 	}
 }

@@ -1,6 +1,5 @@
 package it.unibs.fp.titoliazionari;
 
-import java.util.ArrayList;
 
 public class LottoPosseduto {
 	private Titolo refLotto;
@@ -16,12 +15,16 @@ public class LottoPosseduto {
 		return lotValue;	
 	}
 	
-	public void setLotValue() {
+	public void updateLotValue() {
 		lotValue = refLotto.getValue() * nActions;
 	}
 	
 	public int getLotActionsNumber() {
 		return this.nActions;
+	}
+	
+	public String getRefLottoName() {
+		return refLotto.getName();
 	}
 
 }

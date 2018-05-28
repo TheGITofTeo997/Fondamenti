@@ -1,7 +1,9 @@
 package it.unibs.fp.titoliazionari;
 
+import it.unibs.fp.mylib.EstrazioniCasuali;
 import it.unibs.fp.mylib.InputDati;
 import it.unibs.fp.mylib.MyMenu;
+import it.unibs.fp.mylib.NumeriCasuali;
 
 public class TitoloUtils {
 	
@@ -27,12 +29,31 @@ public class TitoloUtils {
 				int nAct = InputDati.leggiInteroNonNegativo(TitoliString.HOWMANYACTIONS);
 				LottoPosseduto bought = new LottoPosseduto(list.getTitleAt(choice-1), nAct);
 				mWallet.addLot(bought);
-				bought.setLotValue();
+				bought.updateLotValue();
 			}
 			else
 			{
 				needToExit=true;
 			}
 		}		
+	}
+	
+	public static void dailyVariation(ElencoTitoli list)
+	{
+		for(int i=0; i<list.getListSize(); i++)
+		{
+			double variation = NumeriCasuali.estraiDouble(1.0, 10.0);
+			if(chooseSign()==1)
+			{
+				variation = variation * (-1);
+			}
+			list.getTitleAt(i).updateValue(variation);
+		}
+	}
+	
+	public static int chooseSign() {
+		int sign;
+		sign = EstrazioniCasuali.estraiIntero(0, 1);
+		return sign;
 	}
 }

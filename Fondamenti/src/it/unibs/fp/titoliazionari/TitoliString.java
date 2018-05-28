@@ -14,6 +14,9 @@ public class TitoliString {
 	public static final String WARNING = "/!\\ Attenzione, devi prima creare un portafoglio! /!\\";
 	public static final String WARNWALLET = "/!\\ Attenzione, hai già un portafoglio! /!\\";
 	public static final String WALLETMENU = "Controlla lo stato del Portafoglio";
-	
-
+	public static final String LOTS = "Lotti Posseduti: ";
+	public static final String ACTIONS = "Azioni: ";
+	public static final String TOTALVALUE = "Valore totale del Portafoglio: ";
+	public static final String VARIATION = "Simula una variazione giornaliera";
+	public static final String VARIED = "Il valore dei Titoli è cambiato!";
 }
