@@ -10,5 +10,18 @@ public class Portafoglio {
 		this.name = name;
 	}
 	
-
+	public void addLot(LottoPosseduto lot) {
+		myWallet.add(lot);
+	}
+	
+	public double getWalletValue() {
+		double value=0;
+		for(int i=0; i<myWallet.size(); i++)
+		{
+			value += myWallet.get(i).getLotValue();
+		}
+		return value;
+	}
+	
+	
 }

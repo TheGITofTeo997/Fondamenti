@@ -9,4 +9,15 @@ public class Titolo {
 		this.value = value;
 	}
 	
+	public String getName() {
+		return this.name;
+	}
+	
+	public double getValue() {
+		return this.value;
+	}
+	
+	public void setNewValue() {
+		
+	}
 }
