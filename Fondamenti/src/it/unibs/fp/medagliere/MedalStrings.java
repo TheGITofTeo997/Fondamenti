@@ -1,7 +1,9 @@
 package it.unibs.fp.medagliere;
 
 public class MedalStrings {
-	
+	/**Class which contains all the strings for this project
+	 * @author Matr715329 & Matr715805
+	 */
 	public static final String WELCOME = "Gestione Medagliere Olimpico";
 	public static final String MENU_OPT1_COUNTRY = "Aggiungi una nazione";
 	public static final String MENU_OPT2_RACE = "Aggiungi una gara";

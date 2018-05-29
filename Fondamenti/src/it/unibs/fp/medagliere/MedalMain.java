@@ -9,7 +9,9 @@ import it.unibs.fp.titoliazionari.TitoliString;
 import java.io.*;
 import java.util.*;
 
-
+/**Main Class of the Medals Project
+ * @author Matr715329 & Matr715805
+ */
 public class MedalMain {
 	private static boolean menuExitFlag = false;
 	private static CountryList clist = new CountryList();
@@ -54,7 +56,8 @@ public class MedalMain {
 	}
 	while(menuExitFlag!=true);
 	}
-	
+	/**Method which welcomes you to the program
+	 */
 	public static void welcomeMsg() {
 		System.out.println(MedalStrings.WELCOME);
 	}

@@ -2,9 +2,15 @@ package it.unibs.fp.medagliere;
 
 import it.unibs.fp.mylib.InputDati;
 import it.unibs.fp.mylib.MyMenu;
-
+/**Class which contains all the utils method for this project
+ * @author Matr715329 & Matr715805
+ */
 public class MedalUtils {
-	
+	/**
+	 * This method will assign the medals through a menu
+	 * @param raceList
+	 * @param countryList
+	 */
 	public static void giveMedal(RaceList rList, CountryList cList) {
 		boolean menuExitFlag = false;
 		String raceToPrize = InputDati.leggiStringaNonVuota(MedalStrings.WHICHRACE);
@@ -46,10 +52,23 @@ public class MedalUtils {
 		while(menuExitFlag!=true);		
 	}
 	
-	
+	/**
+	 * This method will show all the medals for the winners
+	 * @param racelist
+	 */
 	public static void showMedal(RaceList rlist) {
 		String[] raceNames = rlist.getRaceNames();
-		
+		for(int i=0; i<raceNames.length; i++) {
+			System.out.println(MedalStrings.SEPARATOR);
+			System.out.println(raceNames[i]);
+			System.out.println(MedalStrings.SEPARATOR);
+			MedalRace wonRace = rlist.findInList(raceNames[i]);
+			String[] winnerNames = wonRace.getWinnerNames();
+			for(int j=0; j<winnerNames.length; j++)
+			{
+				MedalCountry winner = wonRace.findInList(winnerNames[j]);
+				System.out.println(winnerNames[j] + " O:"+ winner.getGoldsNumber() + " A:" + winner.getSilversNumber() + " B:" + winner.getBronzesNumber());
+			}
+		}	
 	}
-	
 }
