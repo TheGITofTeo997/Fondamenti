@@ -12,7 +12,12 @@ public class RaceList {
 	
 	public void addRace(String raceToAdd) {
 		MedalRace rToAdd = new MedalRace(raceToAdd);
-		raceList.add(rToAdd);
+		if(checkIfRaceExists(raceToAdd) == true) {
+			System.out.println(MedalStrings.WARNRACE);
+		}
+		else {
+			raceList.add(rToAdd);
+		}
 	}
 	
 	public String[] getRaceNames() {
@@ -22,5 +27,21 @@ public class RaceList {
 			toReturn[i] = raceList.get(i).getRaceName();
 		}
 		return toReturn;
+	}
+	
+	public boolean checkIfRaceExists(String race) {
+		for(int i=0; i<raceList.size(); i++) {
+			if(raceList.get(i).getRaceName().equalsIgnoreCase(race))
+				return true;
+		}
+		return false;
+	}
+	
+	public MedalRace findInList(String name) {
+		for(int i=0;i<raceList.size();i++) {
+			if(raceList.get(i).getRaceName().equals(name))
+				return raceList.get(i);
+		}
+		return null;
 	}
 }

@@ -3,6 +3,9 @@ package it.unibs.fp.medagliere;
 import it.unibs.fp.mylib.BelleStringhe;
 import it.unibs.fp.mylib.InputDati;
 import it.unibs.fp.mylib.MyMenu;
+import it.unibs.fp.titoliazionari.LottoPosseduto;
+import it.unibs.fp.titoliazionari.TitoliString;
+
 import java.io.*;
 import java.util.*;
 
@@ -39,12 +42,13 @@ public class MedalMain {
 			System.out.println(MedalStrings.SEPARATOR);
 			System.out.println(MedalStrings.INSERT_R);
 			System.out.println(MedalStrings.SEPARATOR);
-			
+			MedalUtils.giveMedal(rlist, clist);
 			break;
 		case 4:
 			System.out.println(MedalStrings.SEPARATOR);
 			System.out.println(MedalStrings.VIEW);
 			System.out.println(MedalStrings.SEPARATOR);
+			MedalUtils.showMedal(rlist);
 			break;
 		}	
 	}
