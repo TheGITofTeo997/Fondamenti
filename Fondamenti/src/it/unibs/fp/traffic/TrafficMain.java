@@ -15,6 +15,12 @@ public class TrafficMain {
 			int choice = trafficmenu.scegli();
 			switch(choice) {
 			case 1:
+				road.updateMap();
+				road.displayRoad();
+				if(TrafficUtils.checkIfEmpty(road.getMap()))
+				{
+					System.out.println(TrafficStrings.END);
+				}
 				break;
 			case 0:
 				needToExit = true;

@@ -2,31 +2,39 @@ package it.unibs.fp.traffic;
 import it.unibs.fp.mylib.*;
 
 public class TrafficRoad {
-	private int length=12;
-	private int height=4;
-	private TrafficElement[][] map = new TrafficElement[height][length];
+	private int column=12;
+	private int row=4;
+	private TrafficElement[][] map = new TrafficElement[row][column];
 	
 	
 	public void fillRoad() {
-		for(int i=0; i<height; i++) {
-			for(int j=0; j<length; j++) {
+		for(int i=0; i<row; i++) {
+			for(int j=0; j<column; j++) {
 				map[i][j] = choosePlaceholder();
 			}
 		}
 	}
 	
+	public TrafficElement[][] getMap(){
+		return map;
+	}
+	
 	public void displayRoad() {
-		for(int i=0; i<height; i++) {
+		for(int i=0; i<row; i++) {
 			System.out.println("");
-			for(int j=0; j<length; j++) {
+			for(int j=0; j<column; j++) {
 				System.out.print("[" + whatToDisplay(map[i][j]) + "]");
 			}
 		}
 		System.out.println("");
 	}
 	
+	public void updateMap() {
+		map = TrafficUtils.updateMap(map);
+	}
+	
 	private TrafficElement choosePlaceholder() {
-		int choice = EstrazioniCasuali.estraiIntero(1, 6);
+		int choice = EstrazioniCasuali.estraiIntero(1, 15);
 		switch (choice){
 		case 1:
 			return new TrafficPedestrian();
